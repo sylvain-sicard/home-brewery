@@ -4,10 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-
 	<groupId>fr.mssd</groupId>
 	<artifactId>home-brewery</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
@@ -133,10 +132,17 @@
 				<version>1.4.13</version>
 				<executions>
 					<execution>
-						<id>default</id>
+						<id>package</id>
 						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
+							<goal>tag</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
 							<goal>push</goal>
 						</goals>
 					</execution>

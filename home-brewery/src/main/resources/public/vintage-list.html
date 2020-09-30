@@ -27,61 +27,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon ">
-          <img src="img/ic_launcher-web.png" width="50">
-        </div>
-        <div class="sidebar-brand-text mx-3">Home Brewery</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Beer Kits -->
-      <li class="nav-item" >
-        <a class="nav-link" href="beerkit-list.html">
-          <i class="fas fa-fw">
-            <img src="img/img_wheat-web.png" width="25">
-          </i>
-          <span>Beer Kits</span>
-        </a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Nav Item - Vintages -->
-      <li class="nav-item active">
-        <a class="nav-link" href="vintage-list.html">
-          <i class="fas fa-fw">
-            <img src="img/img_beertap-web.png" width="25">
-          </i>
-          <span>Vintages</span>
-        </a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Nav Item - Kegs -->
-      <li class="nav-item">
-        <a class="nav-link" href="keg-list.html">
-          <i class="fas fa-fw">
-            <img src="img/img_bottles-web.png" width="25">
-          </i>
-          <span>Kegs</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      
-    </ul>
-    <!-- End of Sidebar -->
+    <menu-component id="menu" v-bind:items="items"></menu-component>
 
 
 
@@ -138,17 +84,7 @@
       </div>
       <!-- End of Main Content -->
       
-      
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; mssd.fr 2019</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
+      <footer-component id="footer" ></footer-component>
 
     </div>
     <!-- End of Content Wrapper -->
@@ -183,6 +119,8 @@
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
   <script src="js/vintage-list.js"></script>
   
 </body>
