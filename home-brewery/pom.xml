@@ -7,7 +7,7 @@
 	<groupId>fr.mssd</groupId>
 	<artifactId>home-brewery</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
-	<name>Home Brewery</name>
+	<name>Home Brewery</name> 
 
 	<dependencies>
 		<dependency>
