@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Keg {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -24,8 +24,7 @@ public class Keg {
 	
 	private Date fillingDate;
 	
-	@Enumerated(EnumType.STRING)
-    @Column(length = 8)
+	@OneToOne
 	private KegType kegType;
 
 	public Integer getId() {

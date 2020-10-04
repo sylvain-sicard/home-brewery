@@ -54,10 +54,8 @@
               <input class="form-control" id="kegId" v-model="keg.id" disabled>
 
               <label for="kegType">Type</label>
-              <select class="form-control" v-model="keg.kegType">
-                <option>BOTTLE</option>
-                <option>KEG</option>
-              </select>
+              <kegtype-select-component 
+                v-model="keg.kegType"></kegtype-select-component>
 
               <label for="kegVolume">Volume</label>
               <input class="form-control" id="kegVolume" v-model="keg.volume" >
@@ -115,8 +113,9 @@
 	<script src="https://unpkg.com/vue-moment@4.1.0/dist/vue-moment.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-numeral-filter/dist/vue-numeral-filter.min.js"></script>
 
-  <script src="js/menu.js"></script>
-  <script src="js/footer.js"></script>
+  <script src="js/components/kegtype-select.js"></script>
+  <script src="js/components/menu.js"></script>
+  <script src="js/components/footer.js"></script>
   <script src="js/keg-edit.js"></script>
   
 </body>

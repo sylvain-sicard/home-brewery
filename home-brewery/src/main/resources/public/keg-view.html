@@ -45,7 +45,7 @@
 
           <div v-if="keg" class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary" id="keg-code" >{{keg.kegType}} {{keg.volume}}<small class="text-muted">&nbsp;L</small></h6>
+              <h6 class="m-0 font-weight-bold text-primary" id="keg-code" >{{keg.kegType.id}} {{keg.volume}}<small class="text-muted">&nbsp;L</small></h6>
             </div>
             <div class="card-body">
               <div v-if="keg">
@@ -129,8 +129,8 @@
 	<script src="https://unpkg.com/vue-moment@4.1.0/dist/vue-moment.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-numeral-filter/dist/vue-numeral-filter.min.js"></script>
 
-  <script src="js/menu.js"></script>
-  <script src="js/footer.js"></script>
+  <script src="js/components/menu.js"></script>
+  <script src="js/components/footer.js"></script>
   <script src="js/keg-view.js"></script>
   
 </body>
