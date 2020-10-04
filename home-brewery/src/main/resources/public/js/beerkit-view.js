@@ -2,7 +2,7 @@ Vue.use(vueMoment);
 
 const app = new Vue({
 
-  el: '#keg',
+  el: '#wrapper',
   components: {
   },
   data : {

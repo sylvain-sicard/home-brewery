@@ -2,7 +2,7 @@
 
 const app = new Vue({
 
-  el: '#keg',
+  el: '#wrapper',
   data : {
         keg: {},
         vintages: {}

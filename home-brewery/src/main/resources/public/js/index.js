@@ -2,7 +2,7 @@ Vue.use(vueMoment);
 
 const app = new Vue({
 
-  el: '#content',
+  el: '#wrapper',
   data : {
         stats: null
   },

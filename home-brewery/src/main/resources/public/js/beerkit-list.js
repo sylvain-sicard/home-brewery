@@ -1,7 +1,7 @@
 Vue.use(vueMoment);
 
 const app = new Vue({
-  el: '#table',
+  el: '#wrapper',
   data : { 
         beerkits: null,
         filter: 'available'

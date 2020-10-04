@@ -1,5 +1,4 @@
 Vue.component('footer-component',{
-  props: ['items'],
   template:`
       <footer class="sticky-footer bg-white"> 
         <div class="container my-auto"> 
@@ -10,9 +9,3 @@ Vue.component('footer-component',{
       </footer>`
 })
 
-new Vue({
-  el: '#footer',
-  data:{
-    
-  }
-})
