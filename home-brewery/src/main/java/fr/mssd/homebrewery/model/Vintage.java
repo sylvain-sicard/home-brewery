@@ -2,36 +2,45 @@ package fr.mssd.homebrewery.model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="vintageType", 
+  discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue(VintageType.GENERIC_STR)
 public class Vintage {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 
-	@OneToOne
-	private BeerKit beerKit;
-	private Date brewingDate;
-	private String comment;
-	private Boolean brewed = false;
-	
+	protected Date brewingDate;
+	protected String comment;
+	protected Boolean brewed = false;
+	protected String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public BeerKit getBeerKit() {
-		return beerKit;
-	}
-	public void setBeerKit(BeerKit beerKit) {
-		this.beerKit = beerKit;
-	}
+	
 	public Date getBrewingDate() {
 		return brewingDate;
 	}
@@ -51,5 +60,7 @@ public class Vintage {
 		this.brewed = brewed;
 	}
 	
-	
+	public String getVintageType() {
+		return VintageType.GENERIC_STR;
+	}
 }

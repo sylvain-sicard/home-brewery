@@ -15,8 +15,12 @@ const app = new Vue({
     let params = new URLSearchParams(uri);
     
     if(params.has('id')){
+      var type  = params.get("vintageType");
+      if(this.vintage.vintageType){
+        type = this.vintage.vintageType;
+      }
       axios
-        .get('/vintage/'+params.get("id"))
+        .get('/'+type+'-vintage/'+params.get("id"))
         .then(response => {
           this.vintage = response.data;
         });
@@ -38,7 +42,7 @@ const app = new Vue({
   methods: {
     save: function () { 
       axios
-        .post('/vintage/add', this.vintage)
+        .post('/'+this.vintage.vintageType+'-vintage/add', this.vintage)
         .then(response => {
           this.vintage = response.data;
           window.location.href='/vintage-view.html?id='+this.vintage.id;
@@ -47,7 +51,7 @@ const app = new Vue({
     },
     remove: function () {
       axios
-        .delete('/vintage/'+this.vintage.id)
+        .delete('/'+this.vintage.vintageType+'-vintage/'+this.vintage.id)
         .then(response => {
           this.vintage = {};
           window.location.href='/vintage-list.html';

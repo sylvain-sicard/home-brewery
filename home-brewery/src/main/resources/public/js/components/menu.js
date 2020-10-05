@@ -2,9 +2,11 @@ Vue.component('menu-component',{
   data () {
     return {
       items : [
+        {label:"Keg types", img:"img/img_kegs-web.png", url:"kegtype-list.html"},
         {label:"Beer kits", img:"img/img_wheat-web.png", url:"beerkit-list.html"},
         {label:"Vintages", img:"img/img_beertap-web.png", url:"vintage-list.html"},
         {label:"Kegs", img:"img/img_bottles-web.png", url:"keg-list.html"}
+
       ]
     }
   },

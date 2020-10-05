@@ -41,22 +41,20 @@
 
           <div v-if="keg" class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary" id="keg-code" >{{keg.kegType.id}} {{keg.volume}}<small class="text-muted">&nbsp;L</small></h6>
+              <h6 v-if="keg.kegType!=null" class="m-0 font-weight-bold text-primary" id="keg-code" >{{keg.kegType.name}} {{keg.volume}}<small class="text-muted">&nbsp;L</small></h6>
             </div>
             <div class="card-body">
               <div v-if="keg">
 
                 <div v-if="keg.vintage">
                   <h1 class="card-title pricing-card-title">
-                    {{keg.vintage.beerKit.name}} 
+                    {{keg.vintage.name}} 
                   </h1>
                   <ul class="list-unstyled mt-3 mb-4">
-                    <li>{{keg.vintage.beerKit.brand}}</li>
-                    <li>{{keg.vintage.beerKit.beerType}}</li>
                     <li>Brewed : {{keg.vintage.brewingDate | moment("YYYY-MM-DD")}}</li>
                   </ul>
-                   
                 </div>
+
                 <div v-if="keg.kegType==null">
                     <h1 class="card-title pricing-card-title">
                       Code is not registered!

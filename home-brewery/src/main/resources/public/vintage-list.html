@@ -50,19 +50,19 @@
                   <thead>
                     <tr>
                       <th>Brewing date</th>
-                      <th>Beer Name</th>
+                      <th>Name</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Brewing date</th>
-                      <th>Beer Name</th>
+                      <th>Name</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr v-for="vintage in vintages">
                       <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.brewingDate | moment("YYYY-MM-DD")}}</a></td>
-                      <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.beerKit.name}}</a></td>
+                      <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.name}}</a></td>
                     </tr>
                   </tbody>
                 </table>

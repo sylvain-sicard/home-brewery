@@ -84,7 +84,7 @@
                     
                     <tr v-for="keg in kegs">
                       <td><a :href="'/keg-view.html?code='+keg.id">{{keg.id}}</a></td>
-                      <td><a :href="'/keg-view.html?code='+keg.id">{{keg.kegType.id}}</a></td>
+                      <td><a v-if="keg.kegType" :href="'/keg-view.html?code='+keg.id">{{keg.kegType.name}}</a></td>
                       <td><a :href="'/keg-view.html?code='+keg.id">{{keg.volume}}</a></td>
                     </tr>
                     

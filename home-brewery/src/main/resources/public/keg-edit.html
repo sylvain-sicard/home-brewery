@@ -50,16 +50,19 @@
               <input class="form-control" id="kegId" v-model="keg.id" disabled>
 
               <label for="kegType">Type</label>
-              <kegtype-select-component 
-                v-model="keg.kegType"></kegtype-select-component>
+              <select id="kegType" class="form-control" v-model="keg.kegType">
+                <option v-for="kegType in kegTypes" :value="kegType">
+                  {{kegType.name}}
+                </option>
+              </select>
 
               <label for="kegVolume">Volume</label>
               <input class="form-control" id="kegVolume" v-model="keg.volume" >
               
               <label for="vintage">Vintage</label>
-              <select class="form-control" v-model="keg.vintage">
+              <select id="vintage" class="form-control" v-model="keg.vintage">
                 <option v-for="vintage in vintages" :value="vintage">
-                  {{vintage.beerKit.name}} ({{vintage.beerKit.beerType}})
+                  {{vintage.name}}
                 </option>
               </select>
 
@@ -109,7 +112,6 @@
 	<script src="https://unpkg.com/vue-moment@4.1.0/dist/vue-moment.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-numeral-filter/dist/vue-numeral-filter.min.js"></script>
 
-  <script src="js/components/kegtype-select.js"></script>
   <script src="js/components/menu.js"></script>
   <script src="js/components/footer.js"></script>
   <script src="js/keg-edit.js"></script>

@@ -5,7 +5,8 @@ const app = new Vue({
   el: '#wrapper',
   data : {
         keg: {},
-        vintages: {}
+        vintages: {},
+        kegTypes: {}
   },
   mounted () {
   	let uri = window.location.search.substring(1); 
@@ -20,9 +21,15 @@ const app = new Vue({
     }
 
     axios
-        .get('/vintage/all/not-brewed')
+        .get('/Generic-vintage/all/not-brewed')
         .then(response => {
           this.vintages = response.data;
+        });
+
+    axios
+        .get('/kegtype/all')
+        .then(response => {
+          this.kegTypes = response.data;
         });
   },
   methods: {

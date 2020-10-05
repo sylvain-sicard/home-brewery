@@ -40,18 +40,18 @@
 
           <!-- Keg edit -->
 
-          <div v-if="vintage.beerKit" class="card shadow mb-4">
+          <div v-if="vintage" class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary" >{{vintage.beerKit.brand}}</h6>
+              <h6 class="m-0 font-weight-bold text-primary" >{{vintage.id}}</h6>
             </div>
             <div class="card-body">
 
               <h1 class="card-title pricing-card-title">
-                {{vintage.beerKit.name}} 
+                {{vintage.name}} 
               </h1>
               <ul class="list-unstyled mt-3 mb-4">
-                <li>{{vintage.beerKit.volume}}<small class="text-muted">&nbsp;L</small></li>
-                <li>{{vintage.beerKit.beerType}}</li>
+                <li v-if="vintage.vintageType == 'Beer'">{{vintage.beerKit.volume}}<small class="text-muted">&nbsp;L</small></li>
+                <li v-if="vintage.vintageType == 'Beer'">{{vintage.beerKit.beerType}}</li>
                 <li>Brewing date : {{vintage.brewingDate | moment("YYYY-MM-DD")}}</li>
                 <li>Brewed : {{vintage.brewed}}</li>
                 <li>{{vintage.comment}}</li>
@@ -60,7 +60,7 @@
               
 
               <hr/>
-              <a class="btn btn-lg btn-block btn-primary" :href="'/vintage-edit.html?id='+vintage.id">Edit</a>
+              <a class="btn btn-lg btn-block btn-primary" :href="'/vintage-edit.html?id='+vintage.id+'&vintageType='+vintage.vintageType">Edit</a>
             </div>
           </div>
 

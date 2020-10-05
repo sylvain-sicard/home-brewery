@@ -26,16 +26,20 @@ public interface KegRepository extends CrudRepository<Keg, Integer> {
 	Collection<Keg> findAllRegisteredAndEmptyKegs();
 	
 	//@Query(value = "SELECT k.kegType, b.name as vintage, count(*) as nbKeg FROM Keg k, Vintage v, BeerKit b WHERE k.vintage IS NOT NULL AND k.vintage = v.id AND v.beerKit = b.id GROUP BY k.kegType, b.name")
-	@Query(value = "SELECT k.keg_type as kegType, b.name as vintage, count(*) as nbKeg FROM keg k, vintage v, beer_kit b WHERE k.vintage_id IS NOT NULL AND k.vintage_id = v.id AND v.beer_kit_id = b.id GROUP BY k.keg_type, b.name", nativeQuery = true)
+	@Query(value = "SELECT kt.name as kegType, k.volume as kegVolume, v.name as vintage, count(*) as nbKeg, kt.icon FROM keg k, vintage v, keg_type kt WHERE k.vintage_id IS NOT NULL AND k.vintage_id = v.id AND k.keg_type_id = kt.id GROUP BY kt.name, k.volume, v.name, kt.icon ORDER BY v.name, kt.name, k.volume", nativeQuery = true)
 	Collection<NbKegByVintage> getNbKegByVintage();
 
    public static interface NbKegByVintage {
 
      String getKegType();
+     
+     Float getKegVolume();
 
      String getVintage();
      
      Integer getNbKeg();
+     
+     String getIcon();
 
   }
 }
