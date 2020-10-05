@@ -7,7 +7,9 @@ const app = new Vue({
   	vuejsDatepicker
   },
   data : {
-        vintage: {},
+        vintage: {
+          vintageType : "Generic"
+        },
         beerKits: {}
   },
   mounted () {
