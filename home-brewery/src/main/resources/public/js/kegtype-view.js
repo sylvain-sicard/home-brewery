@@ -4,7 +4,7 @@ const app = new Vue({
 
   el: '#wrapper',
   data : {
-        vintage: {}
+        kegtype: {}
   },
   mounted () {
   	let uri = window.location.search.substring(1); 
@@ -12,9 +12,9 @@ const app = new Vue({
     
     if(params.has('id')){
       axios
-        .get('/Generic-vintage/'+params.get("id"))
+        .get('/kegtype/'+params.get("id"))
         .then(response => {
-          this.vintage = response.data;
+          this.kegtype = response.data;
         });
     
     }

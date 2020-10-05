@@ -27,11 +27,7 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <menu-component id="menu" v-bind:items="items"></menu-component>
-
-
-
-
+    <menu-component></menu-component>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -54,19 +50,19 @@
                   <thead>
                     <tr>
                       <th>Brewing date</th>
-                      <th>Beer Name</th>
+                      <th>Name</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>Brewing date</th>
-                      <th>Beer Name</th>
+                      <th>Name</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr v-for="vintage in vintages">
                       <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.brewingDate | moment("YYYY-MM-DD")}}</a></td>
-                      <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.beerKit.name}}</a></td>
+                      <td><a :href="'/vintage-view.html?id='+vintage.id">{{vintage.name}}</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -119,8 +115,8 @@
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-  <script src="js/menu.js"></script>
-  <script src="js/footer.js"></script>
+  <script src="js/components/menu.js"></script>
+  <script src="js/components/footer.js"></script>
   <script src="js/vintage-list.js"></script>
   
 </body>

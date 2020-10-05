@@ -3,13 +3,13 @@ Vue.use(vueMoment);
 const app = new Vue({
   el: '#wrapper',
   data : { 
-        vintages: null
+        kegtypes: null
   },
   mounted () {
     axios
-      .get('/Generic-vintage/all')
+      .get('/kegtype/all')
       .then(response => {
-        this.vintages = response.data;
+        this.kegtypes = response.data;
           $(document).ready(function() {
           $('#dataTable').DataTable();
         });

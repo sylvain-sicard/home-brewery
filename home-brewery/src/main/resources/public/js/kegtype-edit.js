@@ -4,9 +4,10 @@ const app = new Vue({
 
   el: '#wrapper',
   components: {
+  	vuejsDatepicker
   },
   data : {
-        beerkit: {}
+        kegtype: {}
   },
   mounted () {
   	let uri = window.location.search.substring(1); 
@@ -14,27 +15,29 @@ const app = new Vue({
     
     if(params.has('id')){
       axios
-        .get('/beerkit/'+params.get("id"))
+        .get('/kegtype/'+params.get("id"))
         .then(response => {
-          this.beerkit = response.data;
+          this.kegtype = response.data;
         });
+      
     }
   },
   methods: {
-    save: function () {
+    save: function () { 
       axios
-        .post('/beerkit/add', this.beerkit)
+        .post('/kegtype/add', this.kegtype)
         .then(response => {
-          this.beerkit = response.data;
-          window.location.href='/beerkit-view.html?id='+this.beerkit.id;
+          this.kegtype = response.data;
+          window.location.href='/kegtype-view.html?id='+this.kegtype.id;
         });
+      
     },
     remove: function () {
       axios
-        .delete('/beerkit/'+this.beerkit.id)
+        .delete('/kegtype/'+this.kegtype.id)
         .then(response => {
-          this.beerkit = {};
-          window.location.href='/beerkit-list.html';
+          this.kegtype = {};
+          window.location.href='/kegtype-list.html';
         });
     }
   }

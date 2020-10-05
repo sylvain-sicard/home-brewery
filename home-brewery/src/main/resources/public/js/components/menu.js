@@ -1,5 +1,15 @@
 Vue.component('menu-component',{
-  props: ['items'],
+  data () {
+    return {
+      items : [
+        {label:"Keg types", img:"img/img_kegs-web.png", url:"kegtype-list.html"},
+        {label:"Beer kits", img:"img/img_wheat-web.png", url:"beerkit-list.html"},
+        {label:"Vintages", img:"img/img_beertap-web.png", url:"vintage-list.html"},
+        {label:"Kegs", img:"img/img_bottles-web.png", url:"keg-list.html"}
+
+      ]
+    }
+  },
   template:`
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="menu-component">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html"> 
@@ -26,16 +36,5 @@ Vue.component('menu-component',{
       console.log(url + " : " + curUrl);
       return curUrl == "/"+url ? "active" : ""; 
     }
-  }
-})
-
-new Vue({
-  el: '#menu',
-  data:{
-    items : [
-      {label:"Beer kits", img:"img/img_wheat-web.png", url:"beerkit-list.html"},
-      {label:"Vintages", img:"img/img_beertap-web.png", url:"vintage-list.html"},
-      {label:"Kegs", img:"img/img_bottles-web.png", url:"keg-list.html"}
-    ]
   }
 })
