@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 @Entity
 public class KegType {
@@ -16,8 +15,7 @@ public class KegType {
 	
 	protected String name;
 	
-	@Lob
-    @Column(columnDefinition="VARCHAR(8192)")
+	@Column(length=8192)
 	protected String icon;
 
 	public KegType(String name) {
