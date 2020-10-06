@@ -1,9 +1,11 @@
 package fr.mssd.homebrewery.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class KegType {
@@ -14,6 +16,8 @@ public class KegType {
 	
 	protected String name;
 	
+	@Lob
+    @Column(columnDefinition="VARCHAR(8192)")
 	protected String icon;
 
 	public KegType(String name) {
@@ -45,8 +49,8 @@ public class KegType {
 		return icon;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setIcon(String bs) {
+		this.icon = bs;
 	}
 	
 	

@@ -4,7 +4,7 @@ const app = new Vue({
 
   el: '#wrapper',
   data : {
-        kegtype: {}
+        kegtype: null
   },
   mounted () {
   	let uri = window.location.search.substring(1); 

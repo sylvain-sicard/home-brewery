@@ -53,8 +53,9 @@
               <input id="name" class="form-control" v-model="kegtype.name" >
 
               <label for="icon">Icon</label>
-              <input id="icon" class="form-control" v-model="kegtype.icon" >
-
+              
+              <input id="icon" class="form-control" type="file" ref="icon"  v-on:change="handleFileUpload(kegtype)"/>
+              <img :src="kegtype.icon" class="img-thumbnail rounded mx-auto d-block" width="64" height="64"/>
               <hr/>
               <button class="btn btn-lg btn-block btn-primary" v-on:click="save">Save</button>
               <button v-if="kegtype.id" class="btn btn-lg btn-block btn-danger" v-on:click="remove">Delete</button>

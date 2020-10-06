@@ -51,8 +51,8 @@
               <ul class="list-unstyled mt-3 mb-4">
                 <li>&nbsp;</li>
               </ul>
-              <img class="img-thumbnail rounded mx-auto d-block" img :src="kegtype.icon" width="64" />
-              
+
+              <img class="img-thumbnail rounded mx-auto d-block" v-bind:src="kegtype.icon" width="64" height="64"/>
 
               <hr/>
               <a class="btn btn-lg btn-block btn-primary" :href="'/kegtype-edit.html?id='+kegtype.id">Edit</a>
