@@ -14,7 +14,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Keg {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 
 	private Float volume;
@@ -27,6 +26,12 @@ public class Keg {
 	@OneToOne
 	private KegType kegType;
 
+	public Keg() {}
+	
+	public Keg(Integer id) {
+		this.id=id;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
