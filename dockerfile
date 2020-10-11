@@ -7,7 +7,7 @@ ENV DB_NAME=homebrewery
 ENV DB_USER=homebrewery
 ENV DB_PASSWORD=homebrewery
 
-ENV INGRESS_ENDPOINT=http://192.168.1.100:8888/
+ENV INGRESS_ENDPOINT=http://192.168.1.100:8888/code/add
 ENV APP_CODE=fr.mssd.homebrewery
 
 ADD target/lib /usr/share/home-brewery/lib
