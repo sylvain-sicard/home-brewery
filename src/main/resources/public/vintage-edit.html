@@ -79,7 +79,7 @@
               <vuejs-datepicker id="brewingDate" :bootstrap-styling="true" v-model="vintage.brewingDate" format="yyyy-MM-dd"></vuejs-datepicker>
 
               <label for="comment">Comment</label>
-              <textarea class="form-control" id="comment" rows="3"></textarea> v-model="vintage.comment" 
+              <textarea class="form-control" id="comment" rows="3" v-model="vintage.comment"></textarea>  
               
               <hr/>
               <button class="btn btn-lg btn-block btn-primary" v-on:click="save">Save</button>
